@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 19:26:56 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/01 15:48:13 by ftroiter         ###   ########.fr       */
+/*   Created: 2022/11/01 15:26:28 by ftroiter          #+#    #+#             */
+/*   Updated: 2022/11/01 16:14:08 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int
-	ft_isalnum(int c)
+int	contains(char start, char end, char c)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	return (c >= start && c <= end);
+}
+
+int	ft_toupper(int c)
+{
+	if (contains('a', 'z', c))
+		c -= 32;
+	return (c);
 }

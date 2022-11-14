@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include "libft.h"
 
-int main(void)
-{
-    char str[50];
+int main () {
+   const char str[] = "http://www.tutorialspoint.com";
+   const char ch = '.';
+   char *ret;
 
-    strcpy(str, "This is string.h library function");
-    puts(str);
+   ret = ft_strrchr(str, ch);
 
-    ft_memset(str, '$', 7);
-    puts(str);
-    return (0);
+   printf("String after |%c| is - |%s|\n", ch, ret);
+   
+   return(0);
 }

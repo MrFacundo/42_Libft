@@ -6,12 +6,11 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:41:47 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/10/26 19:48:01 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:48:43 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	ft_isprint(int c)
 {

@@ -6,15 +6,15 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:51:35 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/10/26 19:54:47 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/05 21:00:09 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*s)
