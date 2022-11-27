@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facu <facu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:21:35 by facu              #+#    #+#             */
-/*   Updated: 2022/11/18 20:39:00 by facu             ###   ########.fr       */
+/*   Updated: 2022/11/27 18:02:14 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	contains(char start, char end, char c)
+static int	contains(char start, char end, char c)
 {
 	return (c >= start && c <= end);
 }
@@ -28,7 +28,7 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	while (contains('\t', '\r', nptr[i]) || nptr[i] == ' ')
 		i++;
-	while (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
 			sign *= -1;

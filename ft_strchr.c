@@ -6,7 +6,7 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:47:56 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/14 13:41:15 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:33:50 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	if (c == '\0')
+		return ((char *)(s + ft_strlen(s)));
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 		{
 			return ((char *)(s + i));
 		}

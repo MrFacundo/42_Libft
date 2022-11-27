@@ -1,53 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/27 17:27:56 by ftroiter          #+#    #+#             */
+/*   Updated: 2022/11/27 17:33:49 by ftroiter         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-
-size_t  strstart(char const *s, char const *set)
+/* returns index of first char in string that is not contained in set*/
+size_t	strstart(char const *s, char const *set)
 {
-    size_t  i;
-    size_t  j;
-    
-    j = 0;
-    i = 0;
-    while (set[j])
+	size_t	i;
+	size_t	j;
+	
+	j = 0;
+	i = 0;
+	while (s[i])
 	{
-        while (s[i])
-        {
-            if (s[i] != set[j])
-                return (i);
-            i++;
-        }
-		j++;
-        i = 0;
+		while (set[j])
+		{
+			if (s[i] != set[j])
+				j++;
+			else
+				break ;
+		}
+		if (!set[j])
+			return (i);
+		i++;
+		j = 0;
 	}
-    return (i);
+	return (i);
 }
 
-
-
-
-
-char    *ft_strtrim(char const *s1, char const *set)
+size_t	strend(char const *s, char const *set)
 {
-	char    *buffer;
-    size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
+	
+	j = 0;
+	i = ft_strlen(s);
+	while (s[i])
+	{
+		while (set[j])
+		{
+			if (s[i] != set[j])
+				j++;
+			else
+				break ;
+		}
+		if (!set[j])
+			return (i);
+		i--;
+		j = 0;
+	}
+	return (i);
+}
 
-    buffer =  (char *)malloc(size_of(*buffer) * strstart(s1, set) + strend(s1, set) + 1);
-    if (!buffer)
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*buffer;
+	size_t	start;
+	size_t	end;
+	size_t	i;
+
+	start = strstart(s1, set);
+	end = strend(s1, set);
+	buffer = (char *)malloc(end - start + 1);
+	if (!buffer)
 		return (NULL);
-    i = 0;
-    j = 0;
-    while (s1[i])
-    {
-        buffer[j++] = s1[i];
-        i++;
-    }
-    i = 0;
-    while (s2[i])
-    {
-        buffer[j++] = s1[i];
-        i++;
-    }
-    buffer[j] = 0;
-    return (buffer);
+	i = 0;
+	while (s1[start] && start <= end)
+	{
+		buffer[i++] = s1[start];
+		start++;
+	}
+	i = 0;
+	return (buffer);
 }

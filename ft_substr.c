@@ -1,55 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/27 17:28:51 by ftroiter          #+#    #+#             */
+/*   Updated: 2022/11/27 17:28:58 by ftroiter         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char	*empty_string(void)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char	*result;
+	char	*buffer;
 
-	result = malloc(1);
-	if (result)
-		result[0] = 0;
-	return (result);
-}
-
-static size_t	select_smallest(size_t num1, size_t num2)
-{
-	if (num1 > num2)
-		return (num2);
-	return (num1);
-}
-
-static char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (i < n && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{	
-		dest[i] = 0;
-		i++;
-	}
-	return (dest);
-}
-
-char    *ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char *  buffer;
-    size_t  buffer_len;
-    size_t  s_len;
-
-    if (!s)
-        return (NULL);
-    s_len = ft_strlen(s);
-    if (start >= s_len || len == 0)
-        return (empty_string());
-    buffer_len = select_smallest(ft_strlen(s + start), len);
-    buffer = (char *)malloc(size_of(*buffer) * (buffer_len));
-    if (!buffer)
-		return (NULL);
-    buffer = ft_strncpy(buffer, s + start, buffer_len);
-    return (buffer);
+	if (!s)
+		return (0);
+	if (ft_strlen(s) < start)
+		len = 0;
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	buffer = malloc(sizeof(char) * (len + 1));
+	if (!buffer)
+		return (0);
+	ft_strlcpy(buffer, s + start, len + 1);
+	return (buffer);
 }
