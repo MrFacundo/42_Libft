@@ -3,82 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: facu <facu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:27:56 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/27 17:33:49 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/27 23:16:46 by facu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* returns index of first char in string that is not contained in set*/
-size_t	strstart(char const *s, char const *set)
+static size_t	strstart(char const *s, char const *set)
 {
 	size_t	i;
-	size_t	j;
 	
-	j = 0;
 	i = 0;
-	while (s[i])
+	while (ft_strchr(set, s[i]))
 	{
-		while (set[j])
-		{
-			if (s[i] != set[j])
-				j++;
-			else
-				break ;
-		}
-		if (!set[j])
-			return (i);
 		i++;
-		j = 0;
 	}
 	return (i);
 }
 
-size_t	strend(char const *s, char const *set)
+static size_t	strend(char const *s, char const *set)
 {
 	size_t	i;
-	size_t	j;
 	
-	j = 0;
-	i = ft_strlen(s);
-	while (s[i])
+	i = ft_strlen(s) - 1;
+	while (ft_strchr(set, s[i]))
 	{
-		while (set[j])
-		{
-			if (s[i] != set[j])
-				j++;
-			else
-				break ;
-		}
-		if (!set[j])
-			return (i);
 		i--;
-		j = 0;
 	}
 	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*buffer;
+	char	res;
 	size_t	start;
 	size_t	end;
 	size_t	i;
 
 	start = strstart(s1, set);
 	end = strend(s1, set);
-	buffer = (char *)malloc(end - start + 1);
-	if (!buffer)
+	if (!s1 || !set)
 		return (NULL);
-	i = 0;
-	while (s1[start] && start <= end)
-	{
-		buffer[i++] = s1[start];
-		start++;
-	}
-	i = 0;
-	return (buffer);
+	if (start > end)
+		return (ft_strdup(s1));
+	return ft_substr(s1, start, (end - start));	
 }
