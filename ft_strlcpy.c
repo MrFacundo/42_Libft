@@ -6,12 +6,16 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:18:02 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/27 18:34:03 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:27:42 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Copies up to size-1 characters from the string pointed to by src into the string pointed to by dst and always terminates the result with a null character. Returns the number of characters it tried to copy, which is the length of the string s2 or n, whichever is smaller.
+// Copies up to size-1 characters from the string pointed to by src
+// into the string pointed to by dst and always terminates the
+// result with a null character. Returns the number of characters
+// it tried to copy, which is the length of the string
+// s2 or n, whichever is smaller.
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

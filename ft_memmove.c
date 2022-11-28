@@ -6,13 +6,16 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:32:23 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/01 15:55:00 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:24:07 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Copies the values of n bytes from the location pointed by src to the memory block pointed by dst. Copying takes place as if an intermediate buffer were used, allowing the destination and source to overlap.
+// Copies the values of n bytes from the location pointed by src
+// to the memory block pointed by dst. Copying takes place as if
+// an intermediate buffer were used, allowing the destination
+// and source to overlap.
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	int	i;

@@ -6,13 +6,15 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 22:31:10 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/05 23:04:50 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:14:27 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Compares the first n bytes of the block of memory pointed by s1 to the first n bytes pointed by s2, returning zero if they all match or a value different from zero representing which is greater if they do not.
+// Compares the first n bytes of the string pointed by s1
+// to the first n bytes pointed by s2, returning zero if they all match
+// or a value different from if they don't.
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;

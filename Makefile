@@ -6,14 +6,14 @@
 #    By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:32:50 by ftroiter          #+#    #+#              #
-#    Updated: 2022/11/27 18:37:01 by ftroiter         ###   ########.fr        #
+#    Updated: 2022/11/28 22:25:21 by ftroiter         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			=	ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha ft_isascii ft_isdigit \
 					ft_isprint ft_memchr ft_memcmp ft_memcpy ft_memmove \
-					ft_memset ft_strchr ft_strdup ft_strjoin ft_strlcat ft_strlcpy ft_strlen \
-					ft_strncmp ft_strnstr ft_strrchr ft_strtrim ft_substr ft_tolower ft_toupper main \
+					ft_memset ft_split ft_strchr ft_strdup ft_strjoin ft_strlcat ft_strlcpy ft_strlen \
+					ft_strncmp ft_strnstr ft_strrchr ft_strtrim ft_substr ft_tolower ft_toupper \
 					
 OBJS			= $(SRCS:=.o)
 
