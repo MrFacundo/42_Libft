@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Places n zero-valued bytes in the area pointed to by str.
 void	ft_bzero(void *str, size_t n)
 {
 	size_t	i;

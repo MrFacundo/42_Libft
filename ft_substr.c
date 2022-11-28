@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// Allocates and returns a pointer to a string which is aa substring from the string ’s’.
-// The substring begins at index ’start’ and is of maximum size ’len’
+// Allocates and returns a pointer to a string which is a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*buffer;

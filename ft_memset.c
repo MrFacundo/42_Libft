@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Copies a character c in the first n bytes of the string pointed by str.
 void	*ft_memset(void *str, int c, size_t n)
 {
 	size_t	i;

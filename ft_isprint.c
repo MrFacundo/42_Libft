@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Cheks whether the argument passed is a printable character or not.
 int	ft_isprint(int c)
 {
 	return (c >= ' ' && c <= '~');

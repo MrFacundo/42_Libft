@@ -17,6 +17,7 @@ static int	contains(char start, char end, char c)
 	return (c >= start && c <= end);
 }
 
+// Converts a given character c to uppercase.
 int	ft_toupper(int c)
 {
 	if (contains('a', 'z', c))

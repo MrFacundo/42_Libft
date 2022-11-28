@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Cheks whether the argument passed is an alphanumeric character or not.
 int
 	ft_isalnum(int c)
 {

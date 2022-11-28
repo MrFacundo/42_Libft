@@ -17,6 +17,7 @@ static int	contains(char start, char end, char c)
 	return (c >= start && c <= end);
 }
 
+// Converts a given character c to lowercase.
 int	ft_tolower(int c)
 {
 	if (contains('A', 'Z', c))

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Cheks whether the argument passed can be represented as a valid 7–bit US-ASCII character or not.
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);

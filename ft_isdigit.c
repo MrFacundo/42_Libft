@@ -17,6 +17,7 @@ static int	contains(char start, char end, char c)
 	return (c >= start && c <= end);
 }
 
+// Cheks whether the argument passed can be is a digit or not.
 int	ft_isdigit(int c)
 {
 	return (contains('0', '9', c));

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-// Allocates and returns a pointer to a new string which is a duplicate of the string s.
+// Allocates and returns a pointer to a  duplicate string of string s.
 char	*ft_strdup(const char *s)
 {
 	char	*ptr;

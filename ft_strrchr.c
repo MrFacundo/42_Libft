@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-// returns index of last ocurrence of char c in string s
+// Returns index of last ocurrence of char c in string s
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;

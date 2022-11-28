@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Copies up to size-1 characters from the string pointed to by src into the string pointed to by dst and always terminates the result with a null character. Returns the number of characters it tried to copy, which is the length of the string s2 or n, whichever is smaller.
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

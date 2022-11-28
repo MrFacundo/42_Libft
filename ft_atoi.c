@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Converts character string nptr to integer
 static int	contains(char start, char end, char c)
 {
 	return (c >= start && c <= end);

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-// returns lenght of string
+// Returns lenght of string s.
 size_t	ft_strlen(const char *s)
 {
 	size_t	count;

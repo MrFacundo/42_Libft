@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Copies the values of n bytes from the location pointed by src to the memory block pointed by dst. Copying takes place as if an intermediate buffer were used, allowing the destination and source to overlap.
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	int	i;

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Compares the first n bytes of the block of memory pointed by s1 to the first n bytes pointed by s2, returning zero if they all match or a value different from zero representing which is greater if they do not.
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Compares no more than n characters from the array pointed to by s1 to the array pointed to by s2. Returns an integer greater than, equal to, or less than zero, if the possibly null-terminated array pointed to by s1 is greater than, equal to, or less than s2.
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

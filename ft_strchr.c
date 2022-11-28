@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-// returns index of first ocurrence of char c in string s
+// Returns index of first ocurrence of char c in string s.
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

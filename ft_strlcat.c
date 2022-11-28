@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Appends no more than size characters from the string pointed to by src into the string pointed to by dst and always terminates the result with null if n is greater than zero. Both the strings s1 and s2 must be terminated with null on entry and a byte for the terminating null should be included in size.
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -33,3 +34,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (src_length + size);
 	return (src_length + dst_length);
 }
+

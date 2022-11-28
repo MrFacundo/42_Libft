@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Allocates and returns a copy of s with the characters specified in set removed from the beginning and the end of the string.
 static size_t	strstart(char const *s, char const *set)
 {
 	size_t	i;

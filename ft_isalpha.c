@@ -17,6 +17,7 @@ static int	contains(char start, char end, char c)
 	return (c >= start && c <= end);
 }
 
+// Cheks whether the argument passed is an alphabetic character or not.
 int	ft_isalpha(int c)
 {
 	return (contains('a', 'z', c) || contains('A', 'Z', c));

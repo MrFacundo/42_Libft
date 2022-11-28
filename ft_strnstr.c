@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Returns the first occurrence	of the null-terminated string little in the null-terminated string big, where not more than	len characters are searched.
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

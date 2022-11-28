@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Allocates memory for an array of nmemb objects of size size and initializes all bytes to zero.
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
