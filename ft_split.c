@@ -6,7 +6,7 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:50:36 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/28 22:31:55 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:01:41 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,53 @@
 // Allocates and returns an array of strings obtained by splitting
 // ’s’ using the character ’c’ as a delimiter. The array must end
 // with a NULL pointer.
+
+int	count_tokens(char const *s, char c)
+{
+	int	count;
+
+	count = 0;
+	while (*s)
+	{
+		if (*s == c)
+			s++;
+		else
+		{
+			count++;
+			while (*s && *s != c)
+				s++;
+		}
+	}
+	return (count);
+}
+
+
 char	**ft_split(char const *s, char c)
 {
-	char *arr[2];
-
-	char	*str_1_buffer;
-	char	*str_2_buffer;
+	char	**result;
 	size_t	i;
-	size_t	j;
+	size_t	len;
 
-	while (s[i])
-		if (s[i] == c)
+	result = malloc(sizeof(char *) * (count_tokens(s, c) + 1));
+	if (!result)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == c)
+			s++;
+		else
 		{
-			ft_substr(s, i , i);
+			i++;
+			len = 0;
+			while (*s && *s != c)
+			{
+				s++;
+				len++;
+			}
+			result[i] = ft_substr(s - len, 0, len);
+			i++;
 		}
-
-
-	i = ft_strchr(s, c);
-	str_1_buffer = ft_substr(s, 0, i);
-	str_2_buffer = ft_substr(s, i + 1, ft_strlen(s) + 1);
-
-	arr[0] = &str_1_buffer;
-	arr[1] = &str_2_buffer;
-
-	return (arr);
+	}
+	result[i] = '/0';
+	return (result);
 }
