@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 20:47:56 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/01 20:52:56 by ftroiter         ###   ########.fr       */
+/*   Created: 2022/12/01 20:37:58 by ftroiter          #+#    #+#             */
+/*   Updated: 2022/12/01 23:10:31 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// Returns pointer to index of first ocurrence of char c in string s.
-char	*ft_strchr(const char *s, int c)
+//Applies the function ’f’ to each character of the
+//string ’s’, and passing its index as first argument
+// Returns a new string resulting
+// from successive applications of ’f’.
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	size_t	i;
+	size_t	len;
+	char	*ptr;
 
-	if (!c)
-		return ((char *)(s + ft_strlen(s)));
+	if (!s)
+		return (0);
+	len = ft_strlen(s) + 1;
+	ptr = (char *)malloc(sizeof(*s) * len);
+	if (!ptr)
+		return (0);
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == (unsigned char)c)
-		{
-			return ((char *)(s + i));
-		}
+		ptr[i] = f(i, s[i]);
 		i++;
 	}
-	return (0);
+	ptr[i] = 0;
+	return (ptr);
 }

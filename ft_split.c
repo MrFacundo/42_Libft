@@ -6,16 +6,12 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:50:36 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/29 23:01:41 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/01 22:41:06 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // IN PROGRESS
-
-// Allocates and returns an array of strings obtained by splitting
-// ’s’ using the character ’c’ as a delimiter. The array must end
-// with a NULL pointer.
 
 int	count_tokens(char const *s, char c)
 {
@@ -36,7 +32,9 @@ int	count_tokens(char const *s, char c)
 	return (count);
 }
 
-
+// Allocates and returns an array of strings obtained by splitting
+// ’s’ using the character ’c’ as a delimiter. The array must end
+// with a NULL pointer.
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -54,15 +52,12 @@ char	**ft_split(char const *s, char c)
 		{
 			i++;
 			len = 0;
-			while (*s && *s != c)
-			{
-				s++;
+			while (*s && *s != c && s++)
 				len++;
-			}
 			result[i] = ft_substr(s - len, 0, len);
 			i++;
 		}
 	}
-	result[i] = '/0';
+	result[i] = 0;
 	return (result);
 }
