@@ -6,16 +6,15 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:50:36 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/01 22:41:06 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:05:44 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// IN PROGRESS
 
-int	count_tokens(char const *s, char c)
+static size_t	count_tokens(char const *s, char c)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*s)
@@ -41,8 +40,9 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	len;
 
+	i = 0;
 	result = malloc(sizeof(char *) * (count_tokens(s, c) + 1));
-	if (!result)
+	if (!result || !s)
 		return (NULL);
 	while (*s)
 	{
@@ -50,12 +50,10 @@ char	**ft_split(char const *s, char c)
 			s++;
 		else
 		{
-			i++;
 			len = 0;
-			while (*s && *s != c && s++)
-				len++;
-			result[i] = ft_substr(s - len, 0, len);
-			i++;
+			while (*s && *s != c && ++len)
+				++s;
+			result[i++] = ft_substr(s - len, 0, len);
 		}
 	}
 	result[i] = 0;

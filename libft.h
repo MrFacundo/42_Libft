@@ -6,7 +6,7 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:26:05 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/01 23:06:46 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/04 23:00:24 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,12 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+
+
+typedef struct s_list
+{
+    void            *content;
+    struct s_list   *next;
+}                   t_list;
 
 #endif
