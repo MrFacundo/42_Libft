@@ -6,15 +6,23 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:59:08 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/04 23:00:23 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:28:12 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Allocates and returns a new node.
+// The member variable ’content’ is initialized with
+// the value of the parameter ’content’. The variable
+// ’next’ is initialized to NULL
 t_list  *ft_lstnew(void *content)
 {
-    t_list  *res = malloc(sizeof(t_list));
+    t_list  *res;
+    
+    res = malloc(sizeof(t_list));
+    if (!res)
+		return (NULL);
     res->content = content;
     res->next = NULL;
     return (res);
