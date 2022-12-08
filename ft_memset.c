@@ -6,7 +6,7 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:07:55 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/11/01 16:13:32 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/08 20:09:45 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memset(void *str, int c, size_t n)
 {
 	size_t	i;
 
-	if (!str)
-		return (0);
 	i = 0;
 	while (i < n)
 	{

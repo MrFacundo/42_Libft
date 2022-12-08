@@ -6,7 +6,7 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:40:16 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/06 23:08:50 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:14:00 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 // the node’s content using the function ’del’ given
 // as a parameter and free the node. The memory of
 // ’next’ must not be freed.
-// IN PROGRESS
-void  ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
 	{

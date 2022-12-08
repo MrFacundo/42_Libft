@@ -6,7 +6,7 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:28:51 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/04 22:44:06 by ftroiter         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:44:08 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (!s)
 		return (0);
 	if (ft_strlen(s) < start)
+	{
 		len = 0;
+		start = 0;
+	}
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
 	buffer = malloc(sizeof(char) * (len + 1));
