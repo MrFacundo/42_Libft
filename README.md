@@ -17,14 +17,13 @@
 
 ## Summary
 Recode the standard C Library and other functions. 
-43 beautiful functions useful to manipulate characters, strings and lists.
+43 beautiful functions to manipulate characters, strings and lists.
 
 ## Subject
 [📗️](en.subject.pdf) 
 
-### External Functions Used
+### Allowed external functions
 
-- read()  
 - malloc()
 - free()
 
