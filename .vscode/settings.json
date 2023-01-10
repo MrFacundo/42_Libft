@@ -3,6 +3,7 @@
         "*.css": "tailwindcss",
         "*.js": "javascriptreact",
         "libft.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "stdlib.h": "c"
     }
 }

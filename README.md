@@ -17,7 +17,7 @@
 
 ## Summary
 Recode the standard C Library and other functions. 
-43 beautiful functions to manipulate characters, strings and lists.
+44 beautiful functions to manipulate characters, strings and lists.
 
 ## Subject
 [📗️](en.subject.pdf) 

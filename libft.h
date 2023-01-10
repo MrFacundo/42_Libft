@@ -6,16 +6,20 @@
 /*   By: ftroiter <ftroiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:26:05 by ftroiter          #+#    #+#             */
-/*   Updated: 2022/12/08 21:25:57 by ftroiter         ###   ########.fr       */
+/*   Updated: 2023/01/10 20:55:57 by ftroiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include <stdlib.h>	// malloc
+# include <unistd.h>	// read
+# include <stdio.h>		// FOPEN_MAX, printf
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 typedef struct s_list
 {
 	void			*content;
@@ -67,5 +71,9 @@ t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
+
+/* get next line */
+
+char		*ft_get_next_line(int fd);
 
 #endif
